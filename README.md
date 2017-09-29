@@ -4,7 +4,7 @@
 ## Spec:
 Today we're building a clone of the popular chrome homepage extension, [Momentum](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=en).
 
-
+![](https://git.generalassemb.ly/wdi-nyc-8-28/momentum-lab/blob/master/momentum_spec.png)
 
 
 ## Parts:

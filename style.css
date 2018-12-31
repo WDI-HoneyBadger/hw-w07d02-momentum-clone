@@ -1,0 +1,41 @@
+body{
+    background-size: cover;
+}
+
+.main {
+    position: absolute;
+    left: 500px;
+    top: 200px;
+    font-size: 40px;
+    color: white;
+    text-align: center
+}
+
+.weather {
+    position: absolute;
+    color: white;
+    right: 20px;
+    font-size: 20px;
+}
+
+.quote {
+    position: absolute;
+    color: white;
+    bottom: 10px;
+    left:100px;
+    width: 80%;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.author{
+    position: absolute;
+    color: white;
+    bottom: 0;
+    left:100px;
+    width: 80%;
+ margin:10px;
+    font-size: 20px;
+    text-align: center;
+}

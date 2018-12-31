@@ -1,0 +1,35 @@
+body{
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.temp{
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    font-size: 30px;
+    color: brown;
+    text-align: center;
+    top: 0;
+    right: 0;
+    font-weight: bold;
+}
+
+.time{
+    font-family: 'Courier New', Courier, monospace;
+    color: #e8e8e8;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20%;
+}
+
+.quote{
+
+    font-family: 'Courier New', Courier, monospace;
+    color: #e8e8e8;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0px;
+    right: 25%;
+    text-align: center;
+}

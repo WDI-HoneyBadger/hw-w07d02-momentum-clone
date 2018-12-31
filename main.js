@@ -40,7 +40,8 @@ $(document).ready(()=>{
     const renderWeather = (weatherTemp) => {
         
         const $container = $('<div>').addClass('weather').prependTo('.momentum');
-        const $temp = $('<h4>').text(weatherTemp.main.temp).appendTo($container);
+        const $temp = $('<h3>').text(weatherTemp.main.temp).appendTo($container);
+        const $city = $('<h4>').text(weatherTemp.name).appendTo($container);
        
     }
 

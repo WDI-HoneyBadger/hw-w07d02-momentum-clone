@@ -1,0 +1,34 @@
+body{
+    margin: 0 auto;
+    font-family: 'Raleway', sans-serif;
+    color: snow;
+
+
+}
+#container{
+    padding: 100px;
+    
+}
+.weather{
+    text-align: right;
+    margin-right: 20px;
+    font-size: 2em;
+    
+}
+.moment{
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+.quote{
+    text-align: center;
+    /* margin: 0 auto; */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    position: absolute;
+    font-size: 1em;
+    font-weight: bolder;
+}

@@ -1,0 +1,48 @@
+body {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.temp {
+      position: absolute;
+      top: 0;
+      right: 0;
+}
+
+.temp h3 {
+    margin-bottom: 5px;
+}
+
+.temp h5 {
+    margin-top: 5px;
+}
+
+.time {
+    display: flex;
+    font-size: 150px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.quote {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+/* .quote p {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+} */

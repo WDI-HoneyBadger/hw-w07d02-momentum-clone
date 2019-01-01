@@ -44,8 +44,15 @@ $(document).ready(()=>{
         const $temp = $('<p>');
         $temp.text(weather);
         $('body').append($temp);
-
+   
     })
+    const time = ()=>{
+        console.log(moment().format('LTS'));
+        const $time = $('<h1>');
+        $time.text(moment().format('LTS'));
+        $('body').append($time);
+    }
+    time();
     fetchWeather()
     fetchBackgroundImage();
 

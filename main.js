@@ -1,7 +1,7 @@
 $(document).ready(() => {
     console.log("you are beautiful")
 
- //  Unsplash API 
+    //  Unsplash API 
     const fetchBackgraundImage = () => {
         const url = 'https://api.unsplash.com/photos/random/?client_id=1cd5576c18f165821f3bcf76afaecc3d33190a725cc96de1fa73f8bbfa6ed3aa'
         fetch(url)
@@ -17,7 +17,7 @@ $(document).ready(() => {
             ($('body').addClass('bg')).css('background-image', `url(${imageUrl})`)
         }
     }
-//  Open Weather API
+    //  Open Weather API
     fetchCurrentWeather = () => {
         const url = 'http://api.openweathermap.org/data/2.5/weather?q=Riyadh&units=metric&APPID=e6ed8d551a8b3f095477b7bd887962a0'
         fetch(url)
@@ -36,8 +36,8 @@ $(document).ready(() => {
 
             $temp.text((weathers.main.temp) + '°')
             $name.text(weathers.name);
-//bounse
-            $icon.attr('src','http://openweathermap.org/img/w/'+ weathers.weather[0].icon +'.png')
+            //bounse
+            $icon.attr('src', 'http://openweathermap.org/img/w/' + weathers.weather[0].icon + '.png')
 
             $divc.append($icon)
             $divc.append($temp)
@@ -52,7 +52,7 @@ $(document).ready(() => {
     }
 
 
-//Forismatic API 
+    //Forismatic API 
     fetchQuote = () => {
         const url = 'https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en'
         fetch(url)
@@ -68,11 +68,25 @@ $(document).ready(() => {
 
             $('.quotes').append($quotetext)
         }
-// momentome
+        // momentome
         const time = $('<h1>').addClass('time').text(moment().format('LT'));
         $('.times').append(time)
+
+        const today = new Date()
+        const curHr = today.getHours()
+
+        if (curHr < 12) {
+          return   $('<h5>').addClass('time1').text('Good Morning').appendTo('.times')
+        } else if (curHr < 18) {
+          return   $('<h5>').addClass('time1').text('Good Afternoon').appendTo('.times')
+        } else {
+          return   $('<h5>').addClass('time1').text('Good Evening').appendTo('.times')
+        }
+        
+
+
     }
-    
+
 
     fetchCurrentWeather()
     fetchBackgraundImage()

@@ -39,19 +39,19 @@ $(document).ready(() => {
     const fetchQuote = () => {
         const url = "http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en";
         fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            renderQuote(data);
-        })
-        .catch(error => {
-            const myQuote = {
-                quoteText: "The man who passes the sentence should swing the sword.",
-                quoteAuthor: "Eddard Stark"
-            }
-            renderQuote(myQuote);
-            console.log(error)
-        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                renderQuote(data);
+            })
+            .catch(error => {
+                const myQuote = {
+                    quoteText: "The man who passes the sentence should swing the sword.",
+                    quoteAuthor: "Eddard Stark"
+                }
+                renderQuote(myQuote);
+                console.log(error)
+            })
     }
 
 
@@ -60,17 +60,17 @@ $(document).ready(() => {
         let icon = "☁"
         switch (weatherData.weather[0].main) {
             case "Clear": icon = icons.clear;
-            break;
+                break;
             case "Rain": icon = icons.rain;
-            break;
+                break;
             case "Storm": icon = icons.storm;
-            break;
+                break;
             case "Snow": icon = icons.snow;
-            break;
+                break;
             case "Mist": icon = icons.mist;
-            break;
+                break;
             case "Clouds": icon = icons.clouds;
-            break;
+                break;
         }
 
 
@@ -88,17 +88,21 @@ $(document).ready(() => {
     }
 
     const renderQuote = (quoteData) => {
-        if(quoteData.quoteAuthor == "") quoteData.quoteAuthor = "Unknown Wise Ass"
+        if (quoteData.quoteAuthor == "") quoteData.quoteAuthor = "Unknown Wise Ass"
         const $quoteDiv = $("<div>").addClass("quote").appendTo("body");
         $("<h3>").text(`"${quoteData.quoteText}"`).appendTo($quoteDiv);
         $("<p>").text(`-${quoteData.quoteAuthor}`).appendTo($quoteDiv);
     }
 
-    const renderMoment = () =>{
+    const renderMoment = () => {
         const currentMoment = moment().format('LTS');
         const $momentDiv = $("<div>").addClass("moment").appendTo("body");
         $("<h1>").text(currentMoment).appendTo($momentDiv);
         $("<p>").text("Good day, Raed").appendTo($momentDiv);
+    }
+
+    const updateMoment = () => {
+        $(".moment>h1").text(moment().format('LTS'))
     }
 
 
@@ -106,6 +110,10 @@ $(document).ready(() => {
     fetchWeather();
     fetchQuote();
     renderMoment();
-    console.log(typeof(moment().format('LTS')));
+    setInterval(() => {
+        updateMoment();
+    }, 1000);
+
+    console.log(typeof (moment().format('LTS')));
 
 })

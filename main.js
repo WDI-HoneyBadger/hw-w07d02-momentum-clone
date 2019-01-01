@@ -46,6 +46,25 @@ $(document).ready(()=>{
         $('body').append($temp);
    
     })
+
+    const fetchQuote = () =>{
+        const url = 'https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en';
+        fetch(url)
+        .then(response =>response.json())
+        .then(data =>{
+            console.log(data);
+            renderQuote(data.quoteText);
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+    
+    }
+    const renderQuote = (quote =>{
+        const $quote = $('<p>');
+        $quote.text(quote);
+        $('body').append($quote);
+    })
     const time = ()=>{
         console.log(moment().format('LTS'));
         const $time = $('<h1>');
@@ -53,7 +72,8 @@ $(document).ready(()=>{
         $('body').append($time);
     }
     time();
-    fetchWeather()
+    fetchWeather();
+    fetchQuote();
     fetchBackgroundImage();
 
 

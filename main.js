@@ -15,7 +15,7 @@ $(document).ready(() => {
 
     const renderBackgroundImage = (imageUrl) => {
         console.log(imageUrl)
-        $('body').css('background-image', `url(${imageUrl})`);
+        $('body').addClass('body').css('background-image', `url(${imageUrl})`);
 
     };
 
@@ -32,13 +32,13 @@ $(document).ready(() => {
     const renderQuote = quote => {
         const $newDiv = $('<div>');
         const $quoteText = $('<h2>').addClass('quoteText').text(quote.quoteText+' - '+quote.quoteAuthor);
-        $newDiv.append($quoteText).css({
+        $newDiv.append($quoteText)/* .css({
             'left': '0',
             'bottom': ' 0',
             'margin': '50px 0',
             'padding':'0',
             'text-align': 'center'
-        }) ;
+        }) ; */
         $('body').append($newDiv)
     }
 
@@ -56,20 +56,20 @@ $(document).ready(() => {
     };
 
     const renderWeather = displayWeather => {
-        const $newDiv = $('<div>').css({
+        const $newDiv = $('<div>').addClass('temp')/* .css({
             'text-align': 'center',
             'padding-bottom': ' 200px' 
-        }) ;
-        const $newDiv2 = $('<div>').css({
+        }) ; */
+        const $newDiv2 = $('<div>').addClass('time')/* .css({
             'text-align': 'center',
-            'padding-bottom': ' 500px'
-            /* 'width': '500px',
+            'padding-bottom': ' 500px',
+            'width': '500px',
             'margin':'0 auto',
             'text-align':'left',
-            'padding':'15px ' */
-        }) ;
+            'padding':'15px ' 
+        }) ; */
      
-        const $time = $('<h2>').addClass('time').text(moment().format('LTS'));
+        const $time = $('<h2>').text(moment().format('LTS'));
         const $newTemp = $('<h2>').text(displayWeather.main.temp+' °C'+ '- '+displayWeather.name);
         $newDiv.append($newTemp);
         $newDiv2.append($time);

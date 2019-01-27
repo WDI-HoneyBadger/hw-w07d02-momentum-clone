@@ -1,0 +1,41 @@
+body, html {
+    height: 100%;
+    margin: 0;
+   align-items: stretch;
+   justify-content: center;
+   align-content: center;
+   display: flex;  
+   flex-flow: column wrap;
+   text-align: center;
+   
+  }
+.body{
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+}
+.time{
+    font-size: 50px;
+    margin: auto;
+    text-align: center;
+
+}
+.quoteText{
+
+    justify-content: center;
+    text-align: center
+}
+/* .weather{
+
+} */
+
+.temp {
+    align-self: flex-end;
+    text-align: right;
+    position:absolute;
+    right:0;
+    top:0;
+}
+
